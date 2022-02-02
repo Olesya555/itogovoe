@@ -1,7 +1,18 @@
 import 'package:flutter/material.dart';
 
-class AuthPage extends StatelessWidget {
+class AuthPage extends StatefulWidget {
   const AuthPage({Key? key}) : super(key: key);
+
+  @override
+  _AuthPageState createState() => _AuthPageState();
+}
+
+  String userTelephone = '9041234567';
+  String userPassword = 'Demo1234';
+
+class _AuthPageState extends State<AuthPage> {
+
+
 
   @override
   Widget build(BuildContext context) {
@@ -27,7 +38,7 @@ class AuthPage extends StatelessWidget {
                     decoration: const InputDecoration(
                       icon: Icon(Icons.phone),
                         labelText: 'Введите номер телефона',
-                        hintText: 'в формате: +79991234567'
+                        hintText: '10 цифр в формате: 9991234567'
                     ),
                     keyboardType: TextInputType.phone,
                   ),
@@ -38,10 +49,9 @@ class AuthPage extends StatelessWidget {
                         icon: Icon(Icons.vpn_key),
                         labelText: 'Введите пароль',
                     ),
-
                   ),
-
-                  // Отбивка
+                  const SizedBox(height: 20,),
+                  const Text('Demo-доступ:'),
                 ],
               ),
             ),
@@ -53,27 +63,7 @@ class AuthPage extends StatelessWidget {
 }
 
 
-// Класс для навигации
-class NavigationPage extends StatefulWidget {
-  const NavigationPage({Key? key}) : super(key: key);
 
-  @override
-  _NavigationPageState createState() => _NavigationPageState();
-}
-
-class _NavigationPageState extends State<NavigationPage> {
-  @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      initialRoute: '/', // инициализируем корневой каталог, наш "дом"
-      routes: {
-        '/': (context) => const UserList(), // прописываем маршрут главного экрана через стрелочную анонимную функцию
-        //'/first': (context) => const DetalInfo(),// прописываем маршрут к следующей странице
-        '/second': (context) => const InfoMP (),
-      },
-    );
-  }
-}
 
 // Выдвижная панель навигации, отображается на экранах
 // Подключается по ссылке -  drawer: navDrawer(context),
@@ -141,6 +131,22 @@ class UserList extends StatefulWidget {
 }
 
 class _UserListState extends State<UserList> {
+  @override
+  Widget build(BuildContext context) {
+    return Container();
+  }
+}
+
+
+// Класс "Детальная информация" пока еще пустой
+class DetInfo extends StatefulWidget {
+  const DetInfo({Key? key}) : super(key: key);
+
+  @override
+  _DetInfoState createState() => _DetInfoState();
+}
+
+class _DetInfoState extends State<DetInfo> {
   @override
   Widget build(BuildContext context) {
     return Container();
