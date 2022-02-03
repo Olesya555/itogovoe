@@ -1,5 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:itogovoe/stranica_1.dart';
+import 'package:itogovoe/auth_page.dart';
+import 'package:itogovoe/det_info.dart';
+import 'package:itogovoe/user_list.dart';
+
 
 void main() {
   runApp(const NavigationPage());
